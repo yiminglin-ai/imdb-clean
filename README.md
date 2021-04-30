@@ -1,8 +1,16 @@
 # IMDB-Clean: A Novel Benchmark for Age Estimation in the Wild
-Scripts for creating the IMDB-Clean dataset for age/gender estimation.
+Scripts for creating the IMDB-Clean dataset for age estimation and gender classification. 
+
+If you use this repository in your research, we kindly rquest you to cite the following paper:
+```
+```
+
 
 ## Introduction
-We have cleaned the noisy [IMDB-WIKI](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/) dataset using a constrained clustering method, resulting this new benchmark for in-the-wild age estimation..
+
+We have cleaned the noisy [IMDB-WIKI](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/) dataset using a constrained clustering method, resulting this new benchmark for in-the-wild age estimation. The annoations also allow this dataset to used for some other tasks, like gender classification and face recognition/verification. For more detailed introduction
+
+
 
 ## How to use
 Clone this repo, install the python requirements and run the script:
