@@ -34,4 +34,6 @@ done
 
 cd ..
 
-python scripts/create_imdb_clean_1024.py test
+python create_imdb_clean_1024.py test
+python create_imdb_clean_1024.py valid
+python create_imdb_clean_1024.py train

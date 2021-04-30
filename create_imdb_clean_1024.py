@@ -11,15 +11,11 @@ import pandas as pd
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 Image.MAX_IMAGE_PIXELS = None
 
-split = sys.argv[1]
-
-imdb_csv_split = pd.read_csv(f'./csvs/imdb_{split}_new.csv')
-
 IMDB_DIR = './data/imdb'
 
 MAX_SIDE = 1024
 OUT_DIR = f'./data/imdb-clean-{MAX_SIDE}'
-
+VIS_DIR = f'./data/imdb-clean-{MAX_SIDE}-visualisation'
 
 def pil_loader(path):
     # open path as file to avoid ResourceWarning (https://github.com/python-pillow/Pillow/issues/835)
@@ -154,14 +150,25 @@ def process(ind):
     os.makedirs(osp.dirname(out_fn), exist_ok=1)
     img = Image.fromarray(img)
 
-    draw = ImageDraw.Draw(img)
-    draw.rectangle(bbox, outline=(255, 255, 255))
     img.save(out_fn)
+
+    # visualisating some random images 
+    if ind % 100 == 0:
+        draw = ImageDraw.Draw(img)
+        draw.text((row.x_min, row.y_min), f'Age: {row.age}')
+        draw.rectangle((row.x_min, row.y_min, row.x_max, row.y_max), outline=(255, 255, 255))
+        vis_fn = out_fn.replace(OUT_DIR, VIS_DIR)
+        os.makedirs(osp.dirname(vis_fn), exist_ok=1)
+        img.save(vis_fn)
+
     return row
 
 
 if __name__ == '__main__':
     output = []
+    split = sys.argv[1]
+    imdb_csv_split = pd.read_csv(f'./csvs/imdb_{split}_new.csv')
+
     with Pool(processes=16) as pool:
         for row in tqdm.tqdm(pool.imap_unordered(process, imdb_csv_split.index), total=len(imdb_csv_split.index)):
             output.append(row)
