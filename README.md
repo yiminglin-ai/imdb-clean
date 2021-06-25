@@ -3,6 +3,16 @@ Scripts for creating the IMDB-Clean dataset for age estimation and gender classi
 
 If you use this repository in your research, we kindly rquest you to cite the following paper:
 ```
+
+@article{lin2021fpage,
+      title={FP-Age: Leveraging Face Parsing Attention for Facial Age Estimation in the Wild}, 
+      author={Yiming Lin and Jie Shen and Yujiang Wang and Maja Pantic},
+      year={2021},
+      eprint={2106.11145},
+      journal={arXiv},
+      primaryClass={cs.CV}
+}
+
 ```
 
 
