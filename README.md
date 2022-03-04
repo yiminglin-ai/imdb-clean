@@ -1,7 +1,9 @@
 # IMDB-Clean: A Novel Benchmark for Age Estimation in the Wild
-Scripts for creating the IMDB-Clean dataset for age estimation and gender classification. 
+
+Scripts for creating the IMDB-Clean dataset for age estimation and gender classification.
 
 If you use this repository in your research, we kindly rquest you to cite the following paper:
+
 ```
 
 @article{lin2021fpage,
@@ -15,19 +17,21 @@ If you use this repository in your research, we kindly rquest you to cite the fo
 
 ```
 
-
 ## Introduction
 
-We have cleaned the noisy [IMDB-WIKI](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/) dataset using a constrained clustering method, resulting this new benchmark for in-the-wild age estimation. The annoations also allow this dataset to used for some other tasks, like gender classification and face recognition/verification. For more detailed introduction
+We have cleaned the noisy [IMDB-WIKI](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/) dataset using a constrained clustering method, resulting this new benchmark for in-the-wild age estimation. The annoations also allow this dataset to used for some other tasks, like gender classification and face recognition/verification. For more details please refer to our FPAge paper.
 
-
+![compare](visual_samples/compare_with_imdbwiki.jpg)
 
 ## How to use
+
 Clone this repo, install the python requirements and run the script:
+
 ```bash
 pip install -r ./requirements.txt
 bash run_all.sh
 ```
+
 This will download the original images from the [IMDB-WIKI](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/) dataset. The file tree would become the following:
 
 ```
@@ -50,6 +54,6 @@ The cropped images are stored in `imdb-clean-1024` and the annotations for the s
 ![](visual_samples/test2.jpg)
 ![](visual_samples/test3.jpg)
 
+## Disclaimer
 
-## Disclaimer 
 We only provide new annotations under MIT licence. The images are from the [IMDB-WIKI](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/) dataset. We do not own any of these images. Please refer to their website for the licence to use these images.
