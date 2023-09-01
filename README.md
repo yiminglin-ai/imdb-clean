@@ -54,6 +54,9 @@ The cropped images are stored in `imdb-clean-1024` and the annotations for the s
 ![](visual_samples/test2.jpg)
 ![](visual_samples/test3.jpg)
 
+## Community Contributions
+* Authors of MiVOLO have kindly provided extra face and body bounding box annotations [here](https://github.com/WildChlamydia/MiVOLO#dataset).
+
 ## Disclaimer
 
 We only provide new annotations under MIT licence. The images are from the [IMDB-WIKI](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/) dataset. We do not own any of these images. Please refer to their website for the licence to use these images.
