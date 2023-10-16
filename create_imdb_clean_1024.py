@@ -172,5 +172,5 @@ if __name__ == '__main__':
     with Pool(processes=16) as pool:
         for row in tqdm.tqdm(pool.imap_unordered(process, imdb_csv_split.index), total=len(imdb_csv_split.index)):
             output.append(row)
-    output = pd.concat(output, 1).transpose()
-    output.to_csv(f'imdb_{split}_new_{MAX_SIDE}.csv', index=False)
+    output = pd.concat(output, axis=1).transpose()
+    output.to_csv(f'{OUT_DIR}/imdb_{split}_new_{MAX_SIDE}.csv', index=False)
