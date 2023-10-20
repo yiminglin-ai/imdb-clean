@@ -4,8 +4,7 @@ Scripts for creating the IMDB-Clean dataset for age estimation and gender classi
 
 If you use this repository in your research, we kindly rquest you to cite the following paper:
 
-```
-
+```bibtex
 @article{lin2021fpage,
       title={FP-Age: Leveraging Face Parsing Attention for Facial Age Estimation in the Wild}, 
       author={Yiming Lin and Jie Shen and Yujiang Wang and Maja Pantic},
@@ -14,8 +13,11 @@ If you use this repository in your research, we kindly rquest you to cite the fo
       journal={arXiv},
       primaryClass={cs.CV}
 }
-
 ```
+
+## Updates
+
+* 2023-10: Added [RetinFace Resnet50 face detector](https://github.com/hhj1897/face_detection) predicions for IMDB-Clean-1024 to `csvs/imdb_1024_retinaface_predictions.csv`, the number of predictions is smaller than the number of images because some faces are not detected. See [visualisation](#visualisation) for examples.
 
 ## Introduction
 
@@ -48,13 +50,19 @@ csvs
 └── imdb_valid_new_1024.csv
 ```
 
-The cropped images are stored in `imdb-clean-1024` and the annotations for the splits are in `imdb_*_new_1024.csv` which you can use to train age/gender estimation models. The images in `imdb-clean-1024-visualisation` are some sample results, for example:
+The cropped images are stored in `imdb-clean-1024` and the annotations for the splits are in `imdb_*_new_1024.csv` which you can use to train age/gender estimation models.
 
+## Visualisation
+
+Below are samples from `imdb-clean-1024`:
+![](visual_samples/example.jpg)
+![](visual_samples/example2.jpg)
 ![](visual_samples/test.jpg)
 ![](visual_samples/test2.jpg)
 ![](visual_samples/test3.jpg)
 
 ## Community Contributions
+
 * Authors of MiVOLO have kindly provided extra face and body bounding box annotations [here](https://github.com/WildChlamydia/MiVOLO#dataset).
 
 ## Disclaimer
